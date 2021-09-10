@@ -1,5 +1,5 @@
 {% set name = "quantiphyse-fabber" %}
-{% set version = "0.9.1.post1" %}
+{% set version = "0.9.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quantiphyse-fabber-{{ version }}.tar.gz
-  sha256: d527e418a93c87272b58c2722e66e0f4de041e53c3f59a08e9a23f143ea786be
+  sha256: bb6db8afefc3be34ac4826955af0b1bc7ad1506c782d96e62acc0d3d89f162fd
 
 build:
   number: 0
