@@ -7,25 +7,27 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quantiphyse-fabber-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/quantiphyse-fabber-{{ version }}.tar.gz
   sha256: bb6db8afefc3be34ac4826955af0b1bc7ad1506c782d96e62acc0d3d89f162fd
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - numpy
     - pyfab
-    - python >=3.6
+    - python >={{ python_min }}
     - quantiphyse
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - PySide2
     - quantiphyse_fabber
